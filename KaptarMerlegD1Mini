@@ -3,6 +3,8 @@
 //
 // https://github.com/milesburton/Arduino-Temperature-Control-Library
 // https://gist.github.com/jeje/57091acf138a92c4176a
+//
+// https://github.com/feketez/kaptarmerleg
 
 #include <OneWire.h>
 #include <ESP8266WiFi.h>
@@ -21,7 +23,7 @@ DallasTemperature DS18B20(&oneWire);
 const char* host = "api.thingspeak.com";                // Your domain  
 
 String ApiKey = "********************";                 //  A Thingspeekről kell beírni a Te apikey-edet.
-String path = "/update?key=" + ApiKey + "&field1=";  
+String path = "/update?key=" + ApiKey + "&field1=";     //  Hozz létre a thingspeeken 6 mezőt
 String path2 = "&field2=";  
 String path3 = "&field3=";
 String path4 = "&field4=";
