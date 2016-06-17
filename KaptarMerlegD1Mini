@@ -179,7 +179,7 @@ void setup() {
   WiFi.forceSleepBegin();                                          //  modem sleep
   delay(1);
   wakeUpTime=millis();
-  sleepTime= 2ul * 60ul * 1000ul * 1000ul;                                // 2 perc
+  sleepTime= 50ul * 1000ul * 1000ul;                                // 50 másodperc
   Serial.begin(115200);
   Serial.println("");
   Serial.println("");
@@ -208,7 +208,6 @@ void loop() {
   
   WiFi.forceSleepWake();
   WiFi.mode(WIFI_STA);
-  // WiFi.config(IPAddress(ip_static), IPAddress(ip_gateway), IPAddress(ip_subnet), IPAddress(ip_dns));
   WiFi.begin(ssid, pass);
   
   idoBelyeg = millis();
@@ -260,9 +259,9 @@ void loop() {
     i++;
   }
 
-  if ( WiFi.status() == WL_CONNECTED && i<4) {
-    sleepTime=58ul * 60ul * 1000ul * 1000ul;                             // 57 perc 58 ul
-    }                              
+  if (WiFi.status() == WL_CONNECTED && i<4) {
+    sleepTime = (61ul * 60ul + 30) * 1000ul * 1000ul;                             // 59 perc 58 másodperc 61ul * 60ul + 32
+    }                    
   
   client.print(String("GET ") + path + sulyf + 
                 path2  + temperatureString + path3 + inditIdo + path4 + akkufesz + path5 + ((millis()-wakeUpTime)/1000.0) + path6 + korrSuly + 
