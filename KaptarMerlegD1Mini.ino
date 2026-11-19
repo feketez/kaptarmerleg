@@ -288,7 +288,7 @@ void loop() {
   ESP.deepSleep(sleepTime , WAKE_RF_DEFAULT);  
 
   delay(1000);
-  Serial.println("Ezt már nem írom ki, mert alszom.");
+  Serial.println("Ezt már nem írom ki, mert alszom. (Akkor meg miért dumálsz?)");
 }
 
 
